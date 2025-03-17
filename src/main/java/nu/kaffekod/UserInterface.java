@@ -1,5 +1,8 @@
 package nu.kaffekod;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class UserInterface {
 
     public static void welcome() {
@@ -25,16 +28,35 @@ public class UserInterface {
         System.out.println("3. Convert SEK to EUR");
         System.out.println("4. Convert EUR to SEK");
         System.out.println("0. Exit");
-        waitingForUserInput();
     }
 
     public static void showResult(String type, double input, double result) {
-        String[] currencies = type.split("To");
-        System.out.printf("→ %f %S = %f %S \n", input, currencies[0], result, currencies[1]);
+        String[] currencies = getCurrencies(type);
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm");
+
+        System.out.printf("%s → %.3f %S = %.3f %S \n", currentDateTime.format(formatter), input, currencies[0], result, currencies[1]);
     }
 
     public static void waitingForUserInput() {
         System.out.print("✦ ");
     }
 
+    public static void chooseMenuPlz() {
+        System.out.println("Please choose a menu item");
+    }
+
+    public static void chosenMenuItem(String type) {
+        String[] currencies = getCurrencies(type);
+        System.out.printf("Convert %S to %S", currencies[0], currencies[1]);
+    }
+
+    public static void chooseNumberPlz() {
+        System.out.println("Please choose a number to convert");
+    }
+
+
+    private static String[] getCurrencies(String type) {
+        return type.split("To");
+    }
 }
