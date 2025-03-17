@@ -44,10 +44,13 @@ public class Main {
                 UserInterface.chosenMenuItem("sekToUsd");
                 CalculateCurrency.sekToUsd(checkCurrencyInput(runInput, userInput, scanner));
             } else if (choosenMenuItem == 2) {
+                UserInterface.chosenMenuItem("usdToSek");
                 CalculateCurrency.usdToSek(checkCurrencyInput(runInput, userInput, scanner));
             } else if (choosenMenuItem == 3) {
+                UserInterface.chosenMenuItem("sekToEuro");
                 CalculateCurrency.sekToEuro(checkCurrencyInput(runInput, userInput, scanner));
             } else if (choosenMenuItem == 4) {
+                UserInterface.chosenMenuItem("euroToSek");
                 CalculateCurrency.euroToSek(checkCurrencyInput(runInput, userInput, scanner));
             }
 

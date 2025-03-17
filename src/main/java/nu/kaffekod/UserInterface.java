@@ -48,7 +48,7 @@ public class UserInterface {
 
     public static void chosenMenuItem(String type) {
         String[] currencies = getCurrencies(type);
-        System.out.printf("Convert %S to %S", currencies[0], currencies[1]);
+        System.out.printf("Convert %S to %S: \n", currencies[0], currencies[1]);
     }
 
     public static void chooseNumberPlz() {
